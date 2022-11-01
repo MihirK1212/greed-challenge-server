@@ -221,7 +221,8 @@ def get_result():
     frequency = dict()
 
     for i in range(1, 101):
-        frequency[i] = freq.get(i, 0) + random.randint(0, 10)
+        # frequency[i] = freq.get(i, 0) + random.randint(0, 10)
+        frequency[i] = freq.get(i, 0)
 
     userlist = UserSession.query.filter_by(game_id=game_id).all()
     ranklist = []
