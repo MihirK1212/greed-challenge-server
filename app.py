@@ -17,6 +17,7 @@ DEV = getenv("DEV")
 NUM_ROUNDS = int(getenv("NUM_ROUNDS"))
 PORT = getenv("PORT")
 SECRET_KEY = getenv("SECRET_KEY")
+RANGE = int(getenv("RANGE"))
 
 app = Flask(__name__)
 app.debug = DEV == "True"
@@ -220,7 +221,7 @@ def get_result():
 
     frequency = dict()
 
-    for i in range(1, 101):
+    for i in range(1, RANGE + 1):
         # frequency[i] = freq.get(i, 0) + random.randint(0, 10)
         frequency[i] = freq.get(i, 0)
 
